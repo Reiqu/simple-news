@@ -1,0 +1,11 @@
+.container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.news {
+    -webkit-flex: 1 auto;
+    flex: 1 auto;
+}
