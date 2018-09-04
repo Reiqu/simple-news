@@ -1,11 +1,10 @@
 # News
 
-  News App build with Angular
+  News App build with Angular using [NewsApi.org](https://newsapi.org)
 
 ## Dependencies
-
-
-  ### [NewsApi](https://newsapi.org)
+  To use this site you need to use a api key from NewsApi.
+  
   Create `\src\environments\apikey.ts`
 
       export const apikey = {
