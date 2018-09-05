@@ -21,7 +21,6 @@
     "@angular/router": "^6.1.0",
     "adm-zip": "^0.4.11",
     "core-js": "^2.5.4",
-    "newsapi": "^2.3.0",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
