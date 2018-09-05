@@ -1,6 +1,23 @@
 <div class="container">
   <div class="filter">
-    <i class="fas fa-globe-asia fa-2x"></i>
+
+    <form #newsForm>
+
+      <label for="country">Länderauswahl</label>
+
+      <select ngModel name="country" id="country">
+        <option  *ngFor="let co of countries" value="{{co.code}}">{{co.name}}</option>
+      </select>
+
+      <label for="category">Bereich</label>
+      <select name="category" id="category">
+        <option  *ngFor="let ca of categories" value="{{ca.category}}">{{ca.name}}</option>
+      </select>
+
+      <button type="submit" (ngSubmit)="onChangeNews()">Anwenden</button>
+
+    </form>
+
   </div>
 
 
@@ -8,7 +25,9 @@
 
 
 
-  <div  *ngFor="let news of news"  class="news">
+
+
+  <div *ngFor="let news of news" async class="news">
     <div *ngIf="news.description != null; else alternateCard">
       <div class="col-3 flex-img">
         <img src="{{news.urlToImage}}" alt="">
