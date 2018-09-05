@@ -1,5 +1,34 @@
 <div class="container">
-  <div *ngFor="let news of news" class="news">
-    <img src="https://via.placeholder.com/350x150" alt="News Picture">
+  <div class="filter">
+    <i class="fas fa-globe-asia fa-2x"></i>
+  </div>
+
+
+
+
+
+
+  <div  *ngFor="let news of news"  class="news">
+    <div *ngIf="news.description != null; else alternateCard">
+      <div class="col-3 flex-img">
+        <img src="{{news.urlToImage}}" alt="">
+      </div>
+      <div class="col-9">
+        <h3>{{news.title}}</h3>
+        <p *ngIf="news.description != null; else nodescription">{{news.description}}</p>
+      </div>
+    </div>
+    <div class="col-12">
+      <a class="button" target="_blank" href="{{news.url}}">Weiterlesen</a>
+    </div>
+
+
+
+    <!-- Template for alternate design because of no description -->
+    <ng-template #nodescription><div class="nodescription"></div></ng-template>
+    <!-- Template for alternate Card design because of no image -->
+    <ng-template #alternateCard><div class="col-12"><h3>{{news.title}}</h3><p *ngIf="news.description != null">{{news.description}}</p></div></ng-template>
   </div>
 </div>
+
+
