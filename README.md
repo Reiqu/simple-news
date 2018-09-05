@@ -13,7 +13,9 @@
 
 ## Setup
 
-    `npm install`
-    `ng serve`    - start a development server
-    `ng build --prod`    - build project for production
+    npm install
+    
+    ng serve    - start a development server
+    
+    ng build --prod    - build project for production
 
