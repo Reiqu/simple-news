@@ -8,7 +8,7 @@ import {throwError} from 'rxjs';
   providedIn: 'root'
 })
 export class NewsService {
-  handleError(error: HttpErrorResponse) {
+  static handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
     } else {
@@ -30,7 +30,7 @@ export class NewsService {
       }
     }).pipe(
       retry(3),
-      catchError(this.handleError)
+      catchError(NewsService.handleError)
     );
   }
 }
