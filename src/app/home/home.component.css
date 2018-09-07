@@ -1,15 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-}
+* {box-sizing: border-box;}
+.row::after {content: "";clear: both;display: table;}
+[class*="col-"] {float: left;padding: 15px;}
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -24,10 +15,10 @@
 .col-12 {width: 100%;}
 
 .container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   text-align: center;
 }
 
@@ -107,6 +98,8 @@ img{
 }
 .filter button:focus{
   outline: none;
+  cursor: default;
+  border-bottom: 2px solid rgba(211, 47, 47, 0.51);
 }
 .filter button:hover{
   border-bottom: 2px solid rgba(211, 47, 47, 0.51);

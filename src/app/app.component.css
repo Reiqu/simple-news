@@ -3,58 +3,60 @@ main{
   width: auto;
 }
 nav{
-position: fixed;
-top: 0;
-width: 100%;
-background-color: #fff;
-box-shadow: rgba(0, 0, 0, 0.14) 0 0 4px 0, rgba(0, 0, 0, 0.28) 0 4px 8px 0;
-margin-bottom: 16px;
-overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.14) 0 0 4px 0, rgba(0, 0, 0, 0.28) 0 4px 8px 0;
+  margin-bottom: 16px;
+  overflow: hidden;
 }
 .nav {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 .nav .right {
   float: right;
 }
 .nav li {
-float: left;
-outline: none;
-cursor: pointer;
+  float: left;
+  cursor: pointer;
 }
+.nav li:focus {
+  opacity: 1;
+  outline: none;}
 .nav li a {
-display: block;
-color: rgba(0, 0, 0, 0.87);
-font-size: 14px;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-opacity: 0.6;
-transition: 250ms;
+  display: block;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 14px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 250ms;
 }
 
 .nav li a:hover {
-opacity: 1;
-transition: 250ms;
+  opacity: 1;
+  transition: 250ms;
 }
 .current{
-border-bottom: 2px solid rgb(117, 117, 117);
+  border-bottom: 2px solid rgb(117, 117, 117);
 }
 .current a {
-opacity: 1 !important;
+  opacity: 1 !important;
 }
 @media only screen and (min-width: 600px) {
   .nav{
-  margin-left: 15%;
-  margin-right: 15%;
-}
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 @media only screen and (min-width: 1000px){
   .nav{
-  margin-left: 20%;
-  margin-right: 20%;
-}
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
