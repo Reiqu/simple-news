@@ -28,23 +28,19 @@
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
+  text-align: center;
 }
 
 .news {
   background-color: #fff;
-  width: 100%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   height: auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px auto;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: 150ms;
-
-}
-.news:hover{
-  margin-top: 20px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.16), 0 1px 6px rgba(0,0,0,0.23);
-  transition: 150ms;
+  line-height: 1.23rem;
 }
 h3{
   font-family: 'Roboto', sans-serif;
@@ -53,12 +49,16 @@ h3{
   -webkit-flex: 0 1 auto;
   flex: 0 1 auto;
   color: #d32f2f;
+  cursor: default;
+
 }
 p{
   margin: 4px;
   font-size: medium;
   font-weight: 300;
   color: #484848;
+  cursor: default;
+  overflow: hidden;
 }
 a.button {
   float: right;
@@ -89,22 +89,26 @@ img{
   justify-content:center;
 }
 .filter{
-  background-color: #fff;
   display: inline-block;
   width: 100%;
-  height: 64px;
-  text-align: right;
-}
-.filter select{
-  margin: 16px;
-  outline: none;
-  padding: 8px 4px;
+  height: 128px;
+  text-align: left;
 }
 .filter button{
+  display: inline-block;
   padding: 8px 4px;
-  margin: 16px;
-  background-color: #d32f2f;
-  color: #ffffff;
+  margin: 16px 4px;
+  background-color: #ffffff;
+  color: #212121;
   border: 0;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   outline: none;
+  border-radius: 8px;
+}
+.filter button:hover{
+  border-bottom: 2px solid rgba(211, 47, 47, 0.51);
+  cursor: pointer;
+}
+.filter form {
 }
