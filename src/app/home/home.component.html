@@ -1,39 +1,36 @@
 <div class="container">
   <div class="filter">
+    <form>
+      <div class="col-12">
+        <div>
 
-    <form #newsForm>
+          <span>Country: </span>
+          <button (click)="selectCountry('de')">Germany</button>
+        <button (click)="selectCountry('uk')">Great Britain</button>
+        <button (click)="selectCountry('us')">United States</button>
+        </div>
+        <div>
 
-      <label for="country">Länderauswahl</label>
-
-      <select ngModel name="country" id="country">
-        <option  *ngFor="let co of countries" value="{{co.code}}">{{co.name}}</option>
-      </select>
-
-      <label for="category">Bereich</label>
-      <select name="category" id="category">
-        <option  *ngFor="let ca of categories" value="{{ca.category}}">{{ca.name}}</option>
-      </select>
-
-      <button type="submit" (ngSubmit)="onChangeNews()">Anwenden</button>
-
+          <span>Category: </span>
+          <button (click)="selectCategory('business')">Business</button>
+          <button (click)="selectCategory('entertainment')">Entertainment</button>
+          <button (click)="selectCategory('health')">Health</button>
+          <button (click)="selectCategory('science')">Science</button>
+          <button (click)="selectCategory('sports')">Sports</button>
+          <button (click)="selectCategory('technology')">Technology</button>
+        </div>
+      </div>
     </form>
-
   </div>
-
-
-
-
-
-
-
-
-  <div *ngFor="let news of news" async class="news">
+  <div *ngFor="let news of news" async class="news col-5">
     <div *ngIf="news.description != null; else alternateCard">
-      <div class="col-3 flex-img">
+      <div class="col-12">
+        <h3>{{news.title}}</h3>
+      </div>
+      <div class="col-6 flex-img">
         <img src="{{news.urlToImage}}" alt="">
       </div>
-      <div class="col-9">
-        <h3>{{news.title}}</h3>
+      <div class="col-6">
         <p *ngIf="news.description != null; else nodescription">{{news.description}}</p>
       </div>
     </div>

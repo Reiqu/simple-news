@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ɵcmf} from '@angular/core';
 import { NewsService } from '../news.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
@@ -8,27 +9,39 @@ import { NewsService } from '../news.service';
 })
 export class HomeComponent implements OnInit {
   news: any = [];
-  countries = [{id: 0, code: 'de', name: 'Deutschland'}, {id: 1, code: 'usa', name: 'USA'}, {id: 2, code: 'uk', name: 'Großbritannien'}];
-  categories = [{id: 0, category: 'business', name: 'Wirtschaft'}, {id: 1, category: 'entertainment', name: 'Unterhaltung'},
-    {id: 2, category: 'health', name: 'Gesundheit'}, {id: 3, category: 'science', name: 'Wissenschaft'},
-    {id: 4, category: 'sports', name: 'Gesundheit'}, {id: 5, category: 'technology', name: 'Technologoie'}];
-  selectedCategory: string;
-  selectedCountry: string;
+  cookieCategory;
+  cookieCountry;
+  cookie1;
+  cookie2;
 
-  constructor(private newsservice: NewsService) {
+  constructor(private newsservice: NewsService, private cookieService: CookieService) {}
 
-  }
   showNews(country: string, category: string) {
     this.newsservice.getNews(country, category)
       .subscribe(data => {
         return this.news = Object.values(data)[2];
       });
   }
-  onChangeNews() {
-    this.showNews(this.selectedCountry, this.selectedCategory);
-  }
 
+  selectCountry(country) {
+    this.cookieService.delete('cookieCountry');
+    this.cookieService.set('cookieCountry', country);
+  }
+  selectCategory(category) {
+    this.cookieService.delete('cookieCategory');
+    this.cookieService.set('cookieCategory', category);
+  }
     ngOnInit() {
-    this.showNews('de', 'business');
+    this.cookie1 = this.cookieService.get('cookieCategory');
+    this.cookie2 = this.cookieService.get('cookieCountry');
+
+    if (this.cookieService.check('cookieCategory') && this.cookieService.check('cookieCountry') != null) {
+      this.cookieCountry = this.cookieService.get('cookieCountry');
+      this.cookieCategory = this.cookieService.get('cookieCategory');
+    } else {
+      this.cookieService.set('cookieCountry', 'de');
+      this.cookieService.set('cookieCategory', 'business');
+    }
+      this.showNews(this.cookieCountry, this.cookieCategory);
   }
 }
