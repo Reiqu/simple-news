@@ -8,8 +8,6 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { GermanyComponent } from './germany/germany.component';
-import { AccountLoginComponent } from './account-login/account-login.component';
-import { AccountDetailsComponent } from './account-details/account-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UsaComponent } from './usa/usa.component';
 import { UkComponent } from './uk/uk.component';
@@ -20,8 +18,6 @@ import { AccountComponent } from './account/account.component';
   declarations: [
     AppComponent,
     GermanyComponent,
-    AccountLoginComponent,
-    AccountDetailsComponent,
     PageNotFoundComponent,
     UsaComponent,
     UkComponent,
