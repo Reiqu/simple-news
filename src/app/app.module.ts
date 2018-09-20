@@ -7,18 +7,26 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { GermanyComponent } from './germany/germany.component';
 import { AccountLoginComponent } from './account-login/account-login.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UsaComponent } from './usa/usa.component';
+import { UkComponent } from './uk/uk.component';
+import { InfoComponent } from './info/info.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    GermanyComponent,
     AccountLoginComponent,
     AccountDetailsComponent,
     PageNotFoundComponent,
+    UsaComponent,
+    UkComponent,
+    InfoComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
