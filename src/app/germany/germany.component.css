@@ -87,22 +87,30 @@ img{
   text-align: left;
 }
 .filter button{
+  color: #ffffff;
   display: inline-block;
-  padding: 8px 4px;
-  margin: 16px 4px;
-  background-color: #ffffff;
-  color: #212121;
+  margin: 0.66rem 0 0 0;
+  padding: 10px 6px;
   border: 0;
-  border-bottom: 2px solid transparent;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  border-radius: 8px;
+  transition: 200ms;
+background-color: rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(33,33,33, 0.3);
+  -moz-box-shadow: 0 2px 5px 0 rgba(33,33,33, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(33,33,33,0.3);
+}
+.filter button:first-child{
+  border: 0;
 }
 .filter button:focus{
   outline: none;
   cursor: default;
-  border-bottom: 2px solid rgba(211, 47, 47, 0.51);
+  background-color: rgba(211, 47, 47, 0.51);
 }
 .filter button:hover{
-  border-bottom: 2px solid rgba(211, 47, 47, 0.51);
+  background-color: transparent;
+  color: #212121;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(33, 33, 33, 0.86);
+  transition: 100ms;
   cursor: pointer;
 }
