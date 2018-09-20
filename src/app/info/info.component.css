@@ -16,6 +16,7 @@
 .col-12 {width: 100%;}
 
 .container {
+  margin-top: 64px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
