@@ -4,15 +4,13 @@ import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './germany.component.html',
+  styleUrls: ['./germany.component.css']
 })
-export class HomeComponent implements OnInit {
+export class GermanyComponent implements OnInit {
   news: any = [];
   cookieCategory;
-  cookieCountry;
   cookie1;
-  cookie2;
 
   constructor(private newsservice: NewsService, private cookieService: CookieService) {}
 
@@ -22,26 +20,18 @@ export class HomeComponent implements OnInit {
         return this.news = Object.values(data)[2];
       });
   }
-
-  selectCountry(country) {
-    this.cookieService.delete('cookieCountry');
-    this.cookieService.set('cookieCountry', country);
-  }
   selectCategory(category) {
     this.cookieService.delete('cookieCategory');
     this.cookieService.set('cookieCategory', category);
   }
     ngOnInit() {
     this.cookie1 = this.cookieService.get('cookieCategory');
-    this.cookie2 = this.cookieService.get('cookieCountry');
 
-    if (this.cookieService.check('cookieCategory') && this.cookieService.check('cookieCountry') != null) {
-      this.cookieCountry = this.cookieService.get('cookieCountry');
+    if (this.cookieService.check('cookieCategory')) {
       this.cookieCategory = this.cookieService.get('cookieCategory');
     } else {
-      this.cookieService.set('cookieCountry', 'de');
       this.cookieService.set('cookieCategory', 'business');
     }
-      this.showNews(this.cookieCountry, this.cookieCategory);
+      this.showNews('de', this.cookieCategory);
   }
 }
