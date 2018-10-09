@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="filter">
-    <form>
-      <div class="col-12">
+  <div class="filter-container">
+    <div class="filter">
+      <form>
         <div>
           <button (click)="selectCategory('business')">Business</button>
           <button (click)="selectCategory('entertainment')">Entertainment</button>
@@ -10,8 +10,8 @@
           <button (click)="selectCategory('sports')">Sports</button>
           <button (click)="selectCategory('technology')">Technology</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
   <div *ngFor="let news of news" async class="news col-5">
     <div *ngIf="news.description != null; else alternateCard">

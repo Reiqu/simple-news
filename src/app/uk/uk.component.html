@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="filter">
-    <form>
-      <div class="col-12">
+  <div class="filter-container">
+    <div class="filter">
+      <form>
         <div>
           <button (click)="selectCategory('business')">Business</button>
           <button (click)="selectCategory('entertainment')">Entertainment</button>
@@ -10,30 +10,32 @@
           <button (click)="selectCategory('sports')">Sports</button>
           <button (click)="selectCategory('technology')">Technology</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-  <div *ngFor="let news of news" async class="news col-5">
-    <div *ngIf="news.description != null; else alternateCard">
+
+    <div *ngFor="let news of news" async class="news col-5">
+      <div *ngIf="news.description != null; else alternateCard">
+        <div class="col-12">
+          <h3>{{news.title}}</h3>
+        </div>
+        <div class="col-6 flex-img">
+          <img src="{{news.urlToImage}}" alt="">
+        </div>
+        <div class="col-6">
+          <p *ngIf="news.description != null; else nodescription">{{news.description}}</p>
+        </div>
+      </div>
       <div class="col-12">
-        <h3>{{news.title}}</h3>
+        <a class="button" target="_blank" href="{{news.url}}">Weiterlesen</a>
       </div>
-      <div class="col-6 flex-img">
-        <img src="{{news.urlToImage}}" alt="">
-      </div>
-      <div class="col-6">
-        <p *ngIf="news.description != null; else nodescription">{{news.description}}</p>
-      </div>
-    </div>
-    <div class="col-12">
-      <a class="button" target="_blank" href="{{news.url}}">Weiterlesen</a>
+
+
+
+      <!-- Template for alternate design because of no description -->
+      <ng-template #nodescription><div class="nodescription"></div></ng-template>
+      <!-- Template for alternate Card design because of no image -->
+      <ng-template #alternateCard><div class="col-12"><h3>{{news.title}}</h3><p *ngIf="news.description != null">{{news.description}}</p></div></ng-template>
     </div>
 
-
-
-    <!-- Template for alternate design because of no description -->
-    <ng-template #nodescription><div class="nodescription"></div></ng-template>
-    <!-- Template for alternate Card design because of no image -->
-    <ng-template #alternateCard><div class="col-12"><h3>{{news.title}}</h3><p *ngIf="news.description != null">{{news.description}}</p></div></ng-template>
-  </div>
 </div>

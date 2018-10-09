@@ -1,17 +1,17 @@
 <div class="container">
-  <div class="filter">
-    <form>
-      <div class="col-12">
-        <div>
-          <button (click)="selectCategory('business')">Business</button>
-          <button (click)="selectCategory('entertainment')">Entertainment</button>
-          <button (click)="selectCategory('health')">Health</button>
-          <button (click)="selectCategory('science')">Science</button>
-          <button (click)="selectCategory('sports')">Sports</button>
-          <button (click)="selectCategory('technology')">Technology</button>
-        </div>
-      </div>
-    </form>
+  <div class="filter-container">
+    <div class="filter">
+      <form>
+          <div>
+            <button (click)="selectCategory('business')">Business</button>
+            <button (click)="selectCategory('entertainment')">Entertainment</button>
+            <button (click)="selectCategory('health')">Health</button>
+            <button (click)="selectCategory('science')">Science</button>
+            <button (click)="selectCategory('sports')">Sports</button>
+            <button (click)="selectCategory('technology')">Technology</button>
+          </div>
+      </form>
+    </div>
   </div>
   <div *ngFor="let news of news" async class="news col-5">
     <div *ngIf="news.description != null; else alternateCard">
